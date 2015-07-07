@@ -1,9 +1,9 @@
 # module-newsletter-opencart
 
-newsletter module created for a store OpenCart
+Newsletter module created for a store OpenCart
 
-just call it on the page that you want like this
-<?php echo $newsletter ?>
+Just call it on the page that you want like this
+<br><br><?php echo $newsletter ?><br><br>
 and then add the controller that calls the module on that page
 
-any questions, feel free to contact me!
+Any questions, feel free to contact me!
