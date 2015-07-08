@@ -8,4 +8,4 @@ and then add the controller that calls the module on that page
 
 Any questions, feel free to contact me!
 
-agyrafa.com
+<a href="http://agyrafa.com">agyrafa.com</a>
