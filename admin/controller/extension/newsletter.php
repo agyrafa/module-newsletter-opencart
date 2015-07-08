@@ -112,6 +112,9 @@ class ControllerExtensionNewsletter extends Controller {
         $data['heading_title'] = $this->language->get('heading_title');
         $data['text_list'] = $this->language->get('text_list');
         $data['text_no_results'] = $this->language->get('text_no_results');
+        $data['button_delete'] = $this->language->get('button_delete');
+
+        $data['delete'] = $this->url->link('extension/newsletter/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
         $data['sort'] = $sort;
         $data['order'] = $order;
@@ -144,14 +147,14 @@ class ControllerExtensionNewsletter extends Controller {
     }
 
     protected function validateDelete() {
-        if (!$this->user->hasPermission('modify', 'marketing/whats_banner')) {
+        if (!$this->user->hasPermission('modify', 'extension/newsletter')) {
             $this->error['warning'] = $this->language->get('error_permission');
         }
 
-        $this->load->model('marketing/whats_banner');
+        $this->load->model('extension/newsletter');
 
-        foreach ($this->request->post['selected'] as $whats_id) {
-            $whats_total = $this->model_marketing_whats_banner->getWhatsById($whats_id);
+        foreach ($this->request->post['selected'] as $id) {
+            $result_total = $this->model_extension_newsletter->getNewsletter($id);
 
         }
 
